@@ -34,9 +34,21 @@
             transform: scale(1.02);
             box-shadow: 0 0 30px rgba(132, 102, 246, 0.3);
         }
+        #header {
+            transition: top 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-black">
+
+    <div id="sale-banner" class="bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-center p-3 fixed top-0 w-full z-[60] flex justify-center items-center shadow-lg">
+        <p class="font-semibold text-sm sm:text-base">
+            <span class="font-bold">LIMITED TIME SALE!</span> All plans are discounted for your first year.
+        </p>
+        <button id="close-banner-btn" class="absolute right-4 text-white hover:text-gray-200 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
 
     <canvas id="bg-canvas"></canvas>
 
@@ -133,7 +145,7 @@
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start pt-4">
                         <!-- Standard Plan -->
-                        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-indigo-500/30 relative">
+                        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-indigo-500/30 relative overflow-hidden">
                             <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-8 py-1 transform -rotate-45 -translate-x-8 translate-y-4" style="z-index: 2;">SALE</div>
                             <h3 class="text-2xl font-bold text-white text-center mt-4">Managed IT</h3>
                             <div class="text-center my-6">
@@ -152,7 +164,7 @@
                         </div>
                         
                         <!-- SOC Plan -->
-                        <div class="relative bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-purple-500 pricing-card-popular">
+                        <div class="relative bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-purple-500 pricing-card-popular overflow-hidden">
                              <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-8 py-1 transform -rotate-45 -translate-x-8 translate-y-4" style="z-index: 2;">SALE</div>
                              <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                                 <span class="bg-purple-600 text-white text-sm font-bold px-4 py-1 rounded-full uppercase">Most Popular</span>
@@ -216,14 +228,50 @@
     <script type="module">
         import * as THREE from 'three';
 
+        // --- Sale Banner Logic ---
+        const saleBanner = document.getElementById('sale-banner');
+        const closeBannerBtn = document.getElementById('close-banner-btn');
+        const header = document.getElementById('header');
+
+        const updateLayoutForBanner = () => {
+          if (saleBanner && !saleBanner.classList.contains('hidden')) {
+            header.style.top = `${saleBanner.offsetHeight}px`;
+          } else {
+            header.style.top = '0px';
+          }
+        };
+        
+        if (sessionStorage.getItem('isBannerClosed') === 'true') {
+          saleBanner.classList.add('hidden');
+        }
+
+        if (closeBannerBtn) {
+          closeBannerBtn.addEventListener('click', () => {
+            saleBanner.classList.add('hidden');
+            sessionStorage.setItem('isBannerClosed', 'true');
+            updateLayoutForBanner();
+          });
+        }
+
+        // Initial load and resize adjustments
+        window.addEventListener('load', updateLayoutForBanner);
+        window.addEventListener('resize', updateLayoutForBanner);
+
         // --- Basic Page Interactivity ---
         function scrollToSection(id) {
             const element = document.getElementById(id);
             const header = document.getElementById('header');
             if (element) {
-                const headerOffset = header.offsetHeight;
+                const banner = document.getElementById('sale-banner');
+                let bannerHeight = 0;
+                if (banner && !banner.classList.contains('hidden')) {
+                    bannerHeight = banner.offsetHeight;
+                }
+
+                const headerOffset = header.offsetHeight + bannerHeight;
                 const elementPosition = element.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
                 window.scrollTo({ top: offsetPosition, behavior: "smooth" });
             }
             // Close mobile menu after clicking a link
