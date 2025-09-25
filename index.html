@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="darkreader-lock">
     <title>ARC Solutions | Managed IT Services</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAReSURBVHhe7ZtPaBxlHMc/R293iY3pFDt2NcnEq2gX2go9BEFLq4eIggdBLwXpQU9BvHj0Uj0Uj2LBg7WoXkQEbUQtFNuE3Uo3Lzppk7Yb2e3sTmf0Z2YTdtnd3Z3d+d78wGDfZfbm/fe/P/7e7/vNjEgkEolEIpFIJBKJRCKRSCQSiUQikUj8r4yC6/f5/B6/L65/T5Vz8/v0e336vL5+v6d/v13/fq/fF1d/394h//A/BfD683Wc3n8vrr8P/L52eX0+X1185+T/w8//VQDz+/W6z2d3T3/fdeY+Pj/v2u/19wF8/+vL+xO/8f3vBfD5/b78Pvh9a9e3q98//v3/F8D8/r4O8/t5l7f//l/w+86/G5d/5/i/8PstAN8hvg/8/vV5xW932/L74fe3W/V7/f69LgD8/u3/L8D/BfD75a6L6//V5/f7DBCBAsuGMAmK/8/3++V+3088R0gM69d7/B6/78N2p2MvaSBtIF1AAg2/D0gM63f7/B6/v19Gf0/G/y+v/gIhzv5eoL6vzzv6+80/fP/k0+dO13Tf0wRxf9IeMv1eL67/vqGA2w0A5/c7+X25/j7v8/v6/R6/b5T//n+S/gO/L/4+jw/w+yUA7/f7LQDg9wI8/j5w8u/X+V4AgH8f/5+s6p8D4PfD6z/u8/u/BwAg/h+Z1//7/H6N/z8z/L5d/5/s3wfg9y0A4PddAEi/1+eXXgC+10MA/v+1zwO46gCgh5+v0+81ALwGgN8/3wEgvz9/AMBfAQD/DwCADwDgAwD4AAAmAEDg+3gV3/fx/Xv6/B4+fofP3+nzd/j8bV1+p8/f4+v36PWHdP0hXf+T098k6Q+I+kO6/hBd/8S8vybrT3n6o6b/SNUfUvWHFP1BTX8w0x8M9Ydh/aFYfyTWn4j1J2L9eVi/HFavx9VrcfVSXL0SVy9E1YtQ9UJEvQhRL0TVa1D1WlS9BlWvgdVrUPUaVL0GVa+B1Wug9SpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GvwPgH7fR/fva/fvcff7NPs+br+P2+9j9/s0+j5uv4/b72P3+zT6Pm6/j9vvY/f7NPo+br+P2+9j9/s0+j5uv4/b72P3+zT6PgC/76Pr73f3D7C5+P0+v+9n/Xk+2w2Yx/J6/f2eXn9v/o8F8BvT9/v1+v2e/v1+/j89/D7v8/v8vo/fPz9//H4+gI/fT/n9Gvh9Hmf6O3B//vT9Afz+6e9H+f0/f3/8Pl+/B2D6/X+5fgfA73fg+q94/b+4/h+Av9/5/wP8/vT7vT9A/L765wL4vQuA+P1//f5/uf6e4Pc3gP5+B+DP8z/fXv+f/n5v/o+vzwOQ/wfg/yIA/D95PwC/P+n3v/n+LwCYRCKRSCQSiUQikUgkEolEIpFIJBL/E/gP+KDbX2d+Sg0AAAAASUVORK5CYII=">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -28,6 +30,10 @@
             position: relative;
             z-index: 1;
         }
+        .pricing-card-popular {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(132, 102, 246, 0.3);
+        }
     </style>
 </head>
 <body class="bg-black">
@@ -39,8 +45,11 @@
         <header id="header" class="bg-gray-900/70 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
-                    <div class="text-2xl font-bold text-white tracking-wide">
-                        ARC<span class="text-indigo-400">Solutions</span>
+                    <div class="flex items-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAReSURBVHhe7ZtPaBxlHMc/R293iY3pFDt2NcnEq2gX2go9BEFLq4eIggdBLwXpQU9BvHj0Uj0Uj2LBg7WoXkQEbUQtFNuE3Uo3Lzppk7Yb2e3sTmf0Z2YTdtnd3Z3d+d78wGDfZfbm/fe/P/7e7/vNjEgkEolEIpFIJBKJRCKRSCQSiUQikUj8r4yC6/f5/B6/L65/T5Vz8/v0e336vL5+v6d/v13/fq/fF1d/394h//A/BfD683Wc3n8vrr8P/L52eX0+X1185+T/w8//VQDz+/W6z2d3T3/fdeY+Pj/v2u/19wF8/+vL+xO/8f3vBfD5/b78Pvh9a9e3q98//v3/F8D8/r4O8/t5l7f//l/w+86/G5d/5/i/8PstAN8hvg/8/vV5xW932/L74fe3W/V7/f69LgD8/u3/L8D/BfD75a6L6//V5/f7DBCBAsuGMAmK/8/3++V+3088R0gM69d7/B6/78N2p2MvaSBtIF1AAg2/D0gM63f7/B6/v19Gf0/G/y+v/gIhzv5eoL6vzzv6+80/fP/k0+dO13Tf0wRxf9IeMv1eL67/vqGA2w0A5/c7+X25/j7v8/v6/R6/b5T//n+S/gO/L/4+jw/w+yUA7/f7LQDg9wI8/j5w8u/X+V4AgH8f/5+s6p8D4PfD6z/u8/u/BwAg/h+Z1//7/H6N/z8z/L5d/5/s3wfg9y0A4PddAEi/1+eXXgC+10MA/v+1zwO46gCgh5+v0+81ALwGgN8/3wEgvz9/AMBfAQD/DwCADwDgAwD4AAAmAEDg+3gV3/fx/Xv6/B4+fofP3+nzd/j8bV1+p8/f4+v36PWHdP0hXf+T098k6Q+I+kO6/hBd/8S8vybrT3n6o6b/SNUfUvWHFP1BTX8w0x8M9Ydh/aFYfyTWn4j1J2L9eVi/HFavx9VrcfVSXL0SVy9E1YtQ9UJEvQhRL0TVa1D1WlS9BlWvgdVrUPUaVL0GVa+B1Wug9SpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GlS9BlWvQdVrUPUaVL0GVa+B1Wug9WpIvQpSr0LVa1D1GvwPgH7fR/fva/fvcff7NPs+br+P2+9j9/s0+j5uv4/b72P3+zT6Pm6/j9vvY/f7NPo+br+P2+9j9/s0+j5uv4/b72P3+zT6PgC/76Pr73f3D7C5+P0+v+9n/Xk+2w2Yx/J6/f2eXn9v/o8F8BvT9/v1+v2e/v1+/j89/D7v8/v8vo/fPz9//H4+gI/fT/n9Gvh9Hmf6O3B//vT9Afz+6e9H+f0/f3/8Pl+/B2D6/X+5fgfA73fg+q94/b+4/h+Av9/5/wP8/vT7vT9A/L765wL4vQuA+P1//f5/uf6e4Pc3gP5+B+DP8z/fXv+f/n5v/o+vzwOQ/wfg/yIA/D95PwC/P+n3v/n+LwCYRCKRSCQSiUQikUgkEolEIpFIJBL/E/gP+KDbX2d+Sg0AAAAASUVORK5CYII=" alt="ARC Solutions Logo" class="h-8 w-8 mr-3 rounded-md">
+                        <div class="text-2xl font-bold text-white tracking-wide">
+                            ARC<span class="text-indigo-400">Solutions</span>
+                        </div>
                     </div>
                     <nav class="hidden md:flex items-center space-x-8">
                         <button onclick="scrollToSection('services')" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300 font-medium">Services</button>
@@ -118,24 +127,52 @@
             <!-- Pricing Section -->
             <section id="pricing" class="py-20">
                 <div class="container mx-auto px-6">
-                    <div class="text-center mb-12">
+                    <div class="text-center mb-16">
                         <h2 class="text-3xl md:text-4xl font-bold text-white">Transparent Pricing</h2>
-                        <p class="text-gray-400 mt-2">No surprises. Just one simple, all-inclusive price.</p>
+                        <p class="text-gray-400 mt-2">No surprises. Just simple, all-inclusive plans.</p>
                     </div>
-                    <div class="flex justify-center">
-                        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md w-full border border-indigo-500/30">
-                            <h3 class="text-2xl font-bold text-white text-center">Complete Peace of Mind</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+                        <!-- Standard Plan -->
+                        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-indigo-500/30">
+                            <h3 class="text-2xl font-bold text-white text-center">Managed IT</h3>
                             <div class="text-center my-6">
                                 <span class="text-5xl font-extrabold text-white">$150</span>
-                                <span class="text-gray-400 text-lg">/ user & computer / month</span>
+                                <span class="text-gray-400 text-lg">/ user & computer / mo</span>
                             </div>
                             <ul class="space-y-4 text-gray-300 mb-8">
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>Unlimited Remote Support</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>Managed Endpoint Security</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>New User & Computer Setups</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>Hardware Decommissions</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>Unlimited Remote Support</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>Managed Endpoint Security</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>New User & Computer Setups</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>Hardware Decommissions</li>
                             </ul>
-                            <button onclick="scrollToSection('contact')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started Today</button>
+                            <button onclick="scrollToSection('contact')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started</button>
+                        </div>
+                        
+                        <!-- SOC Plan -->
+                        <div class="relative bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-purple-500 pricing-card-popular">
+                             <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                                <span class="bg-purple-600 text-white text-sm font-bold px-4 py-1 rounded-full uppercase">Most Popular</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white text-center">Managed SOC</h3>
+                             <div class="text-center my-6">
+                                <span class="text-5xl font-extrabold text-white">$200</span>
+                                <span class="text-gray-400 text-lg">/ user & computer / mo</span>
+                            </div>
+                            <ul class="space-y-4 text-gray-300 mb-8">
+                                <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-1"><path d="M20 6 9 17l-5-5"></path></svg><span><span class="font-bold text-purple-300">Everything in Managed IT</span>, plus:</span></li>
+                                <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                                <div>
+                                    <span class="font-bold">Managed SOC & SIEM Logging for:</span>
+                                    <ul class="text-gray-400 text-sm list-disc list-inside mt-2 space-y-1">
+                                        <li>Desktops</li>
+                                        <li>Cloud SIEM (Google and Microsoft 365)</li>
+                                        <li>30 Day Log Retention</li>
+                                    </ul>
+                                </div>
+                                </li>
+                                <li class="text-gray-500 text-sm pl-8 italic">(Additional retention available, call to discuss pricing)</li>
+                            </ul>
+                            <button onclick="scrollToSection('contact')" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started Today</button>
                         </div>
                     </div>
                 </div>
@@ -253,7 +290,7 @@
             float random (vec2 st) {
                 return fract(sin(dot(st.xy,
                                      vec2(12.9898,78.233)))
-                             * 43758.5453123);
+                        * 43758.5453123);
             }
 
             // 2D Noise
@@ -306,6 +343,7 @@
                 
                 if (intensity > 0.0) {
                     color = vec3(0.5, 0.8, 1.0); // Lightning Color
+                    color = mix(vec3(0.4, 0.2, 0.8), vec3(0.6, 0.9, 1.0), n); // Indigo/Purple mix
                     color *= intensity;
                 }
                 
