@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Solutions | Managed IT Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-black">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header id="header" class="bg-gray-900/70 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="text-2xl font-bold text-white tracking-wide">
+                        ARC<span class="text-indigo-400">Solutions</span>
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <button onclick="scrollToSection('services')" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300 font-medium">Services</button>
+                        <button onclick="scrollToSection('pricing')" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300 font-medium">Pricing</button>
+                        <button onclick="scrollToSection('contact')" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300 font-medium">Contact</button>
+                        <button onclick="scrollToSection('contact')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-5 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                            Get Started
+                        </button>
+                    </nav>
+                    <div class="md:hidden">
+                        <button id="menu-btn" class="text-white focus:outline-none">
+                            <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                            <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden mt-4 bg-gray-800/80 backdrop-blur-sm rounded-lg p-4">
+                    <nav class="flex flex-col space-y-4">
+                        <button onclick="scrollToSection('services')" class="text-gray-300 hover:text-indigo-400 text-left transition-colors duration-300 font-medium">Services</button>
+                        <button onclick="scrollToSection('pricing')" class="text-gray-300 hover:text-indigo-400 text-left transition-colors duration-300 font-medium">Pricing</button>
+                        <button onclick="scrollToSection('contact')" class="text-gray-300 hover:text-indigo-400 text-left transition-colors duration-300 font-medium">Contact</button>
+                        <button onclick="scrollToSection('contact')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-5 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 mt-2">Get Started</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="min-h-screen flex items-center pt-20">
+                <div class="container mx-auto px-6 text-center text-white">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4">
+                        Reliable IT Support, <br class="hidden sm:block" /> Simplified Pricing
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                        ARC Solutions delivers comprehensive, unlimited IT support and security for your business, all for one flat, transparent fee. Focus on your work, we'll handle the tech.
+                    </p>
+                    <button onclick="scrollToSection('contact')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                        Request a Consultation
+                    </button>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="py-20 bg-black/20 backdrop-blur-md">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">All-Inclusive IT Management</h2>
+                        <p class="text-gray-400 mt-2 max-w-2xl mx-auto">
+                            Our single plan includes everything you need to keep your team productive and your data secure.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-gray-900/70 p-8 rounded-xl shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+                             <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-indigo-400"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2_0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
+                            <h3 class="text-xl font-bold text-white mb-3">Unlimited Remote Support</h3>
+                            <p class="text-gray-400">Get fast, friendly, and effective help whenever you need it. Our expert technicians are just a call or click away.</p>
+                        </div>
+                        <div class="bg-gray-900/70 p-8 rounded-xl shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+                             <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-indigo-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+                            <h3 class="text-xl font-bold text-white mb-3">Managed Endpoint Security</h3>
+                            <p class="text-gray-400">We deploy and manage industry-leading security to protect your computers from cyber threats, 24/7.</p>
+                        </div>
+                        <div class="bg-gray-900/70 p-8 rounded-xl shadow-lg border border-white/10 transform hover:-translate-y-2 transition-transform duration-300">
+                             <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-indigo-400"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg></div>
+                            <h3 class="text-xl font-bold text-white mb-3">Setups & Decommissions</h3>
+                            <p class="text-gray-400">We handle the entire lifecycle of your equipment, ensuring smooth transitions for your team.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Transparent Pricing</h2>
+                        <p class="text-gray-400 mt-2">No surprises. Just one simple, all-inclusive price.</p>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md w-full border border-indigo-500/30">
+                            <h3 class="text-2xl font-bold text-white text-center">Complete Peace of Mind</h3>
+                            <div class="text-center my-6">
+                                <span class="text-5xl font-extrabold text-white">$150</span>
+                                <span class="text-gray-400 text-lg">/ user & computer / month</span>
+                            </div>
+                            <ul class="space-y-4 text-gray-300 mb-8">
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>Unlimited Remote Support</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>Managed Endpoint Security</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>New User & Computer Setups</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-400 mr-3 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>Hardware Decommissions</li>
+                            </ul>
+                            <button onclick="scrollToSection('contact')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started Today</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 bg-black/20 backdrop-blur-md">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Simplify Your IT?</h2>
+                        <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Fill out the form below or email us at <a href="mailto:contact@arcsolutions.tech" class="text-indigo-400 hover:underline">contact@arcsolutions.tech</a>.</p>
+                    </div>
+                    <div class="max-w-xl mx-auto bg-gray-900/70 p-8 rounded-xl shadow-lg border border-white/10">
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div><label for="name" class="block text-gray-300 mb-2 font-medium">Full Name</label><input type="text" id="name" name="name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow"></div>
+                                <div><label for="email" class="block text-gray-300 mb-2 font-medium">Email Address</label><input type="email" id="email" name="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow"></div>
+                            </div>
+                            <div class="mb-6"><label for="message" class="block text-gray-300 mb-2 font-medium">How can we help?</label><textarea id="message" name="message" rows="4" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow"></textarea></div>
+                            <div class="text-center"><button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Send Message</button></div>
+                        </form>
+                        <p id="form-status" class="text-center text-green-400 mt-4 h-6"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-900/70">
+            <div class="container mx-auto px-6 py-6 text-center text-gray-400"><p>&copy; 2024 ARC Solutions. All Rights Reserved.</p></div>
+        </footer>
+    </div>
+
+    <script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // --- Basic Page Interactivity ---
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            const header = document.getElementById('header');
+            if (element) {
+                const headerOffset = header.offsetHeight;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            }
+            // Close mobile menu after clicking a link
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('menu-open-icon').classList.remove('hidden');
+            document.getElementById('menu-close-icon').classList.add('hidden');
+        }
+        window.scrollToSection = scrollToSection;
+        const menuBtn = document.getElementById('menu-btn'), mobileMenu = document.getElementById('mobile-menu'), openIcon = document.getElementById('menu-open-icon'), closeIcon = document.getElementById('menu-close-icon');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); openIcon.classList.toggle('hidden'); closeIcon.classList.toggle('hidden'); });
+        
+        // --- Updated Contact Form Logic ---
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            formStatus.textContent = 'Sending...';
+            
+            // This is the URL for your Cloudflare Worker. You'll get this after deploying your worker.
+            const workerUrl = 'https://your-worker-subdomain.workers.dev'; 
+
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message'),
+            };
+
+            try {
+                const response = await fetch(workerUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = 'Thank you! Your message has been sent.';
+                    formStatus.classList.remove('text-red-400');
+                    formStatus.classList.add('text-green-400');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Something went wrong. Please try again.');
+                }
+
+            } catch (error) {
+                formStatus.textContent = 'Error: Could not send message. Please email us directly.';
+                formStatus.classList.remove('text-green-400');
+                formStatus.classList.add('text-red-400');
+            } finally {
+                 setTimeout(() => { formStatus.textContent = ''; }, 6000);
+            }
+        });
+
+        // --- Three.js Shader Setup ---
+        
+        const vertexShader = `
+            void main() {
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+
+        const fragmentShader = `
+            uniform vec2 u_resolution;
+            uniform float u_time;
+
+            // 2D Random
+            float random (vec2 st) {
+                return fract(sin(dot(st.xy,
+                                     vec2(12.9898,78.233)))
+                             * 43758.5453123);
+            }
+
+            // 2D Noise
+            float noise (vec2 st) {
+                vec2 i = floor(st);
+                vec2 f = fract(st);
+
+                float a = random(i);
+                float b = random(i + vec2(1.0, 0.0));
+                float c = random(i + vec2(0.0, 1.0));
+                float d = random(i + vec2(1.0, 1.0));
+
+                vec2 u = f*f*(3.0-2.0*f);
+                return mix(a, b, u.x) +
+                        (c - a)* u.y * (1.0 - u.x) +
+                        (d - b) * u.x * u.y;
+            }
+
+            // Fractal Brownian Motion
+            float fbm(vec2 st) {
+                float value = 0.0;
+                float amplitude = 0.5;
+                float frequency = 0.0;
+                for (int i = 0; i < 5; i++) {
+                    value += amplitude * noise(st);
+                    st *= 2.0;
+                    amplitude *= 0.5;
+                }
+                return value;
+            }
+
+            void main() {
+                vec2 uv = (gl_FragCoord.xy * 2. - u_resolution.xy) / u_resolution.y;
+                uv *= 1.5; // Zoom
+                
+                vec2 p = uv;
+                float t = u_time * 0.1;
+                
+                // Domain Warping
+                p += fbm(p + t) * 0.5;
+                p += fbm(p * 2.0 + t) * 0.25;
+
+                float n = fbm(p * 2.0);
+                
+                // Make sharp lines from the noise
+                float intensity = 1.0 - abs(n - 0.5) * 2.0;
+                intensity = smoothstep(0.9, 1.0, intensity);
+                
+                vec3 color = vec3(0.0);
+                
+                if (intensity > 0.0) {
+                    color = vec3(0.5, 0.8, 1.0); // Lightning Color
+                    color *= intensity;
+                }
+                
+                // Add a soft glow
+                float glow = fbm(p + t * 0.5) * 0.2;
+                color += vec3(0.05, 0.1, 0.2) * glow;
+                
+                gl_FragColor = vec4(color, 1.0);
+            }
+        `;
+
+        let scene, camera, renderer, material;
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.Camera();
+
+            const canvas = document.getElementById('bg-canvas');
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            const geometry = new THREE.PlaneGeometry(2, 2);
+            
+            const uniforms = {
+                u_time: { value: 0.0 },
+                u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+            };
+
+            material = new THREE.ShaderMaterial({
+                vertexShader: vertexShader,
+                fragmentShader: fragmentShader,
+                uniforms: uniforms
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            window.addEventListener('resize', onWindowResize, false);
+            animate();
+        }
+
+        function onWindowResize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            renderer.setSize(width, height);
+            material.uniforms.u_resolution.value.set(width, height);
+        }
+
+        function animate(timestamp) {
+            requestAnimationFrame(animate);
+            material.uniforms.u_time.value = timestamp * 0.001;
+            renderer.render(scene, camera);
+        }
+        
+        init();
+    </script>
+</body>
+</html>
+
+
