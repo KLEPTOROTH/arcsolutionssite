@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="darkreader-lock">
     <title>ARC Solutions | Managed IT Services</title>
     <!-- Favicon -->
@@ -44,6 +44,7 @@
     <div id="sale-banner" class="bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-center p-3 fixed top-0 w-full z-[60] flex justify-center items-center shadow-lg">
         <p class="font-semibold text-sm sm:text-base">
             <span class="font-bold">LIMITED TIME SALE!</span> All plans are discounted for your first year.
+            <button onclick="scrollToSection('pricing')" class="underline hover:text-gray-200 transition-colors duration-300 ml-2 font-bold">See Pricing!</button>
         </p>
         <button id="close-banner-btn" class="absolute right-4 text-white hover:text-gray-200 transition-opacity">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -151,7 +152,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start pt-4">
                         <!-- Standard Plan -->
                         <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-indigo-500/30 relative overflow-hidden">
-                            <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-8 py-1 transform -rotate-45 -translate-x-8 translate-y-4" style="z-index: 2;">SALE</div>
+                            <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-8 py-1 transform -rotate-45 -translate-x-8 translate-y-2" style="z-index: 2;">SALE</div>
                             <h3 class="text-2xl font-bold text-white text-center mt-4">Managed IT</h3>
                             <div class="text-center my-6">
                                 <span class="text-2xl text-gray-500 line-through mr-2">$200</span>
@@ -168,34 +169,37 @@
                             <button onclick="scrollToSection('contact')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started</button>
                         </div>
                         
-                        <!-- SOC Plan -->
-                        <div class="relative bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-purple-500 pricing-card-popular overflow-hidden">
-                             <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-8 py-1 transform -rotate-45 -translate-x-8 translate-y-4" style="z-index: 2;">SALE</div>
-                             <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                        <!-- SOC Plan Wrapper -->
+                        <div class="relative">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                                 <span class="bg-purple-600 text-white text-sm font-bold px-4 py-1 rounded-full uppercase">Most Popular</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-white text-center">Managed SOC & SIEM</h3>
-                             <div class="text-center my-6">
-                                <span class="text-2xl text-gray-500 line-through mr-2">$250</span>
-                                <span class="text-5xl font-extrabold text-white">$200</span>
-                                <span class="text-gray-400 text-lg">/ user & computer / mo</span>
-                                <p class="text-xs text-gray-400 mt-1">(Limited time offer for the first year)</p>
-                            </div>
-                            <ul class="space-y-4 text-gray-300 mb-8">
-                                <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-1"><path d="M20 6 9 17l-5-5"></path></svg><span><span class="font-bold text-purple-300">Everything in Managed IT</span>, plus:</span></li>
-                                <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-                                <div>
-                                    <span class="font-bold">Managed SOC & SIEM Logging for:</span>
-                                    <ul class="text-gray-400 text-sm list-disc list-inside mt-2 space-y-1">
-                                        <li>Desktops</li>
-                                        <li>Cloud SIEM (Google and Microsoft 365)</li>
-                                        <li>30 Day Log Retention</li>
-                                    </ul>
+                            <!-- SOC Plan Card -->
+                            <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 w-full border border-purple-500 pricing-card-popular relative overflow-hidden">
+                                <div class="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-8 py-1 transform -rotate-45 -translate-x-8 translate-y-2" style="z-index: 2;">SALE</div>
+                                <h3 class="text-2xl font-bold text-white text-center mt-4">Managed SOC & SIEM</h3>
+                                <div class="text-center my-6">
+                                    <span class="text-2xl text-gray-500 line-through mr-2">$250</span>
+                                    <span class="text-5xl font-extrabold text-white">$200</span>
+                                    <span class="text-gray-400 text-lg">/ user & computer / mo</span>
+                                    <p class="text-xs text-gray-400 mt-1">(Limited time offer for the first year)</p>
                                 </div>
-                                </li>
-                                <li class="text-gray-500 text-sm pl-8 italic">(Additional retention available, call to discuss pricing)</li>
-                            </ul>
-                            <button onclick="scrollToSection('contact')" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started Today</button>
+                                <ul class="space-y-4 text-gray-300 mb-8">
+                                    <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-1"><path d="M20 6 9 17l-5-5"></path></svg><span><span class="font-bold text-purple-300">Everything in Managed IT</span>, plus:</span></li>
+                                    <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-purple-400 mr-3 flex-shrink-0 mt-1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                                    <div>
+                                        <span class="font-bold">Managed SOC & SIEM Logging for:</span>
+                                        <ul class="text-gray-400 text-sm list-disc list-inside mt-2 space-y-1">
+                                            <li>Desktops</li>
+                                            <li>Cloud SIEM (Google and Microsoft 365)</li>
+                                            <li>30 Day Log Retention</li>
+                                        </ul>
+                                    </div>
+                                    </li>
+                                    <li class="text-gray-500 text-sm pl-8 italic">(Additional retention available, call to discuss pricing)</li>
+                                </ul>
+                                <button onclick="scrollToSection('contact')" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">Get Started Today</button>
+                            </div>
                         </div>
                     </div>
                 </div>
