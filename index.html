@@ -6,19 +6,19 @@
     <meta name="darkreader-lock">
     <title>ARC Solutions | Managed IT Services</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="ARC Solutions offers flat-rate, unlimited managed IT services, support, and security for businesses nationwide. Simplify your tech with our transparent pricing.">
-    <meta name="keywords" content="managed IT services, IT support, cybersecurity, small business IT, IT consulting, flat-rate IT, ARC Solutions, nationwide IT support">
+    <meta name="description" content="Worried about tech problems? ARC Solutions provides reliable, flat-rate IT support and cybersecurity for small businesses nationwide. We handle your technology so you can focus on growing your business.">
+    <meta name="keywords" content="IT support for small business, business tech support, computer help for businesses, flat-rate IT support, outsourced IT department, business cybersecurity services, data protection for business, ransomware protection, new employee computer setup, nationwide IT support">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.arcsolutions.tech/">
-    <meta property="og:title" content="ARC Solutions | Managed IT Services">
-    <meta property="og:description" content="Flat-rate, unlimited managed IT services, support, and security for businesses nationwide.">
+    <meta property="og:title" content="ARC Solutions | Flat-Rate IT Support for Businesses">
+    <meta property="og:description" content="Worried about tech problems? ARC Solutions provides reliable, flat-rate IT support and cybersecurity for small businesses nationwide.">
     <meta property="og:image" content="https://www.arcsolutions.tech/logo.png">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.arcsolutions.tech/">
-    <meta property="twitter:title" content="ARC Solutions | Managed IT Services">
-    <meta property="twitter:description" content="Flat-rate, unlimited managed IT services, support, and security for businesses nationwide.">
+    <meta property="twitter:title" content="ARC Solutions | Flat-Rate IT Support for Businesses">
+    <meta property="twitter:description" content="Worried about tech problems? ARC Solutions provides reliable, flat-rate IT support and cybersecurity for small businesses nationwide.">
     <meta property="twitter:image" content="https://www.arcsolutions.tech/logo.png">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -63,6 +63,7 @@
       "@id": "",
       "url": "https://www.arcsolutions.tech/",
       "telephone": "661-964-8340",
+      "description": "Reliable, flat-rate IT support and cybersecurity for small businesses nationwide. We handle your technology so you can focus on growing your business.",
       "priceRange": "$200",
       "address": {
         "@type": "PostalAddress",
@@ -75,6 +76,28 @@
         "@type": "Country",
         "name": "United States"
       },
+       "service": [
+        {
+            "@type": "Service",
+            "name": "Managed IT Services"
+        },
+        {
+            "@type": "Service",
+            "name": "Cybersecurity for Business"
+        },
+        {
+            "@type": "Service",
+            "name": "Small Business Tech Support"
+        },
+        {
+            "@type": "Service",
+            "name": "Data Backup and Protection"
+        },
+        {
+            "@type": "Service",
+            "name": "Managed SOC & SIEM"
+        }
+       ],
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 34.697,
@@ -389,7 +412,7 @@ s0.parentNode.insertBefore(s1,s0);
                 const response = await fetch(workerUrl, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-type': 'application/json',
                     },
                     body: JSON.stringify(data),
                 });
