@@ -470,6 +470,18 @@ s0.parentNode.insertBefore(s1,s0);
             }
         });
 
+        // --- Handle URL Hash for Direct Linking ---
+        window.addEventListener('load', () => {
+            setTimeout(() => { // Use a timeout to ensure correct layout calculation after all assets load
+                if (window.location.hash) {
+                    const id = window.location.hash.substring(1); // Remove #
+                    if (document.getElementById(id)) {
+                        scrollToSection(id);
+                    }
+                }
+            }, 100);
+        });
+
         // --- Three.js Shader Setup ---
         
         const vertexShader = `
